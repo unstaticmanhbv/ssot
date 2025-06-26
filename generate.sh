@@ -11,16 +11,18 @@ fi
 
 INPUT_PATH="$1"
 
-# Xác định đường dẫn output (gắn vào thư mục json-schema/, đổi .js → .json)
-OUTPUT_PATH="json-schema/${INPUT_PATH%.js}.json"
+# Cắt 'zod/' khỏi đầu
+RELATIVE_PATH="${INPUT_PATH#zod/}"
 
-echo "🚀 Đang generate JSON Schema từ: $INPUT_PATH"
-echo "📦 Ghi vào: $OUTPUT_PATH"
+# Đổi .js -> .json và gắn prefix json-schema/
+OUTPUT_PATH="json-schema/${RELATIVE_PATH%.js}.json"
 
-# Tạo thư mục nếu chưa có
+echo "🚀 Generating JSON Schema từ: $INPUT_PATH"
+echo "📦 Output: $OUTPUT_PATH"
+
 mkdir -p "$(dirname "$OUTPUT_PATH")"
 
-# Chạy file schema Zod và ghi output vào file JSON
-libs/bun "$INPUT_PATH" > "$OUTPUT_PATH"
+# Chạy file schema và ghi output
+./libs/bun "$INPUT_PATH" > "$OUTPUT_PATH"
 
 echo "✅ Done."

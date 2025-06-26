@@ -1,24 +1,23 @@
 #!/bin/bash
 set -e
 
-echo "🔍 Tìm các file schema Zod thay đổi trong thư mục /zod..."
+echo "🔍 Kiểm tra các file Zod schema vừa staged..."
 
-# Lấy danh sách các file JS staged nằm trong thư mục /zod/
+# Lấy danh sách file .js trong thư mục zod/ đã staged
 FILES=$(git diff --cached --name-only --diff-filter=ACM | grep '^zod/.*\.js$' || true)
 
 for FILE in $FILES; do
-  echo "🛠 Generating JSON Schema từ: $FILE"
-  
-  OUT_FILE="json-schema/${FILE%.js}.json"
+  echo "🛠 Generating from: $FILE"
 
-  # Tạo thư mục nếu chưa có
-  mkdir -p "$(dirname "$OUT_FILE")"
+  # Generate schema
+  ./generate.sh "$FILE"
 
-  # Generate JSON Schema và ghi ra file
-  ./libs/bun ./generate.sh "$FILE" > "$OUT_FILE"
+  # Tìm path tương ứng để git add (bằng lại logic trong generate.sh)
+  RELATIVE_PATH="${FILE#zod/}"
+  JSON_PATH="json-schema/${RELATIVE_PATH%.js}.json"
 
-  # Add file đã generate vào commit
-  git add "$OUT_FILE"
+  # Add file json vào commit
+  git add "$JSON_PATH"
 done
 
-echo "✅ Xong. Đã generate + add lại các schema thay đổi."
+echo "✅ Xong. Đã generate và git add lại các schema bị thay đổi."
