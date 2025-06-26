@@ -21,6 +21,6 @@ echo "📦 Ghi vào: $OUTPUT_PATH"
 mkdir -p "$(dirname "$OUTPUT_PATH")"
 
 # Chạy file schema Zod và ghi output vào file JSON
-libs/bun "zod/$INPUT_PATH" > "$OUTPUT_PATH"
+libs/bun "$INPUT_PATH" > "$OUTPUT_PATH"
 
 echo "✅ Done."
