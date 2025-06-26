@@ -20,6 +20,5 @@ generateToJsonSchema(
     firstWeekDay: z.number().int().nullable().optional(),
     lastSeenLocale: z.string().max(50).nullable().optional(),
     lastSeenLangCode: z.string().max(50).nullable().optional(),
-    metadata: z.record(z.any()).nullable().optional(),
   }),
 );
