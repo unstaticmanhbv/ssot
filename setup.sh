@@ -1,3 +1,6 @@
 #!/bin/bash
+
 git config core.hooksPath .githooks
-echo "✅ Git hook đã được bật (chạy generate schema trước commit)"
+chmod +x .githooks/pre-commit
+
+echo "✅ Đã bật Git hook và cấp quyền thực thi."

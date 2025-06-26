@@ -7,6 +7,7 @@ const HabitSchema = z.object({
   name: z.string(),
   createdAt: z.string().datetime().optional(),
   email: z.string().email().optional(),
+  isActive: z.boolean().optional(),
 });
 
 // Chuyển thành JSON Schema
