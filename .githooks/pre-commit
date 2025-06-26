@@ -6,6 +6,8 @@ echo "🔍 Kiểm tra các file Zod schema vừa staged..."
 # Lấy danh sách file .js trong thư mục zod/ đã staged
 FILES=$(git diff --cached --name-only --diff-filter=ACM | grep '^zod/.*\.js$' || true)
 
+COUNT=0
+
 for FILE in $FILES; do
   echo "🛠 Generating from: $FILE"
 
@@ -18,6 +20,8 @@ for FILE in $FILES; do
 
   # Add file json vào commit
   git add "$JSON_PATH"
+
+  COUNT=$((COUNT + 1))
 done
 
-echo "✅ Xong. Đã generate và git add lại các schema bị thay đổi."
+echo "✅ Done. generated $COUNT files."

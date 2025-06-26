@@ -4,8 +4,8 @@ set -e
 
 # Kiểm tra đối số
 if [ -z "$1" ]; then
-  echo "❌ Thiếu đường dẫn file schema Zod!"
-  echo "👉 Cách dùng: ./generate.sh <đường_dẫn_schema_zod.js>"
+  echo "❌ Please enter file path!"
+  echo "👉 Usage: ./generate.sh <path-to-zod-schema.js>"
   exit 1
 fi
 
