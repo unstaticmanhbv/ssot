@@ -1,0 +1,75 @@
+{
+  [0mtype[2m:[0m [0m[32m[0m[32m"object"[0m[0m[0m[2m,[0m
+  [0mproperties[2m:[0m {
+    [0mid[2m:[0m {
+      [0mtype[2m:[0m [0m[32m[0m[32m"string"[0m[0m[0m[2m,[0m
+      [0mmaxLength[2m:[0m [0m[33m125[0m[0m[2m,[0m
+    }[0m[2m,[0m
+    [0mname[2m:[0m {
+      [0manyOf[2m:[0m [
+        [0m[36m[Object ...][0m[0m[2m,[0m [0m[36m[Object ...][0m
+      ][0m[2m,[0m
+    }[0m[2m,[0m
+    [0memail[2m:[0m {
+      [0manyOf[2m:[0m [
+        [0m[36m[Object ...][0m[0m[2m,[0m [0m[36m[Object ...][0m
+      ][0m[2m,[0m
+    }[0m[2m,[0m
+    [0mpremiumStatus[2m:[0m {
+      [0manyOf[2m:[0m [
+        [0m[36m[Object ...][0m[0m[2m,[0m [0m[36m[Object ...][0m
+      ][0m[2m,[0m
+    }[0m[2m,[0m
+    [0mpremiumExpireDate[2m:[0m {
+      [0manyOf[2m:[0m [
+        [0m[36m[Object ...][0m[0m[2m,[0m [0m[36m[Object ...][0m
+      ][0m[2m,[0m
+    }[0m[2m,[0m
+    [0mprofileImage[2m:[0m {
+      [0mtype[2m:[0m [ [0m[32m"string"[0m[0m[0m[2m,[0m [0m[32m"null"[0m[0m ][0m[2m,[0m
+    }[0m[2m,[0m
+    [0mfirstName[2m:[0m {
+      [0manyOf[2m:[0m [
+        [0m[36m[Object ...][0m[0m[2m,[0m [0m[36m[Object ...][0m
+      ][0m[2m,[0m
+    }[0m[2m,[0m
+    [0mlastName[2m:[0m {
+      [0manyOf[2m:[0m [
+        [0m[36m[Object ...][0m[0m[2m,[0m [0m[36m[Object ...][0m
+      ][0m[2m,[0m
+    }[0m[2m,[0m
+    [0mlastActiveTime[2m:[0m {
+      [0manyOf[2m:[0m [
+        [0m[36m[Object ...][0m[0m[2m,[0m [0m[36m[Object ...][0m
+      ][0m[2m,[0m
+    }[0m[2m,[0m
+    [0mlastActiveTimeZone[2m:[0m {
+      [0manyOf[2m:[0m [
+        [0m[36m[Object ...][0m[0m[2m,[0m [0m[36m[Object ...][0m
+      ][0m[2m,[0m
+    }[0m[2m,[0m
+    [0mfirstWeekDay[2m:[0m {
+      [0manyOf[2m:[0m [
+        [0m[36m[Object ...][0m[0m[2m,[0m [0m[36m[Object ...][0m
+      ][0m[2m,[0m
+    }[0m[2m,[0m
+    [0mlastSeenLocale[2m:[0m {
+      [0manyOf[2m:[0m [
+        [0m[36m[Object ...][0m[0m[2m,[0m [0m[36m[Object ...][0m
+      ][0m[2m,[0m
+    }[0m[2m,[0m
+    [0mlastSeenLangCode[2m:[0m {
+      [0manyOf[2m:[0m [
+        [0m[36m[Object ...][0m[0m[2m,[0m [0m[36m[Object ...][0m
+      ][0m[2m,[0m
+    }[0m[2m,[0m
+    [0mmetadata[2m:[0m {
+      [0manyOf[2m:[0m [
+        [0m[36m[Object ...][0m[0m[2m,[0m [0m[36m[Object ...][0m
+      ][0m[2m,[0m
+    }[0m[2m,[0m
+  }[0m[2m,[0m
+  [0mrequired[2m:[0m [ [0m[32m"id"[0m[0m ][0m[2m,[0m
+  [0madditionalProperties[2m:[0m [0m[33mfalse[0m[0m[2m,[0m
+  [0m$schema[2m:[0m [0m[32m[0m[32m"http://json-schema.org/draft-07/schema#"[0m[0m[0m[2m,[0m
+}
