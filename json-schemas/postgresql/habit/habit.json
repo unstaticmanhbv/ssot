@@ -1,0 +1,87 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Habit",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "maxLength": 60
+    },
+    "userId": {
+      "type": "string",
+      "maxLength": 60
+    },
+    "name": {
+      "type": ["string", "null"],
+      "maxLength": 3000
+    },
+    "regularly": {
+      "type": ["string", "null"],
+      "maxLength": 1000
+    },
+    "priority": {
+      "type": ["number", "null"]
+    },
+    "priorityByArea": {
+      "type": ["string", "null"],
+      "maxLength": 1000
+    },
+    "timeOfDay": {
+      "type": ["integer", "null"]
+    },
+    "shareLink": {
+      "type": ["string", "null"],
+      "maxLength": 1000
+    },
+    "startDate": {
+      "type": ["string", "null"],
+      "format": "date"
+    },
+    "isArchived": {
+      "type": ["boolean", "null"]
+    },
+    "description": {
+      "type": ["string", "null"]
+    },
+    "accentColor": {
+      "type": ["string", "null"],
+      "maxLength": 50
+    },
+    "iconNamed": {
+      "type": ["string", "null"],
+      "maxLength": 50
+    },
+    "habitType": {
+      "type": ["integer", "null"]
+    },
+    "targetActivityType": {
+      "type": ["string", "null"],
+      "maxLength": 100
+    },
+    "createdAt": {
+      "type": ["string", "null"],
+      "format": "date-time"
+    },
+    "logType": {
+      "type": ["string", "null"],
+      "maxLength": 20
+    },
+    "metadata": {
+      "type": ["object", "null"]
+    },
+    "recurringPatternId": {
+      "type": ["string", "null"],
+      "maxLength": 200
+    },
+    "targetFolderId": {
+      "type": ["string", "null"],
+      "maxLength": 60
+    },
+    "customUnitName": {
+      "type": ["string", "null"],
+      "maxLength": 100
+    }
+  },
+  "required": ["id", "userId"],
+  "additionalProperties": false
+}
