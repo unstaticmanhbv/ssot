@@ -24,4 +24,4 @@ for FILE in $FILES; do
   COUNT=$((COUNT + 1))
 done
 
-echo "✅ Done. generated $COUNT files."
+echo "✅ Done. Generated $COUNT files."

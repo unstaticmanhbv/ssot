@@ -25,4 +25,6 @@ mkdir -p "$(dirname "$OUTPUT_PATH")"
 # Chạy file schema và ghi output
 ./libs/bun "$INPUT_PATH" > "$OUTPUT_PATH"
 
-echo "✅ Done."
+# Hiển thị tên file zod đã xử lý
+ZOD_FILENAME=$(basename "$INPUT_PATH")
+echo "✅ Done. Processed Zod file: $ZOD_FILENAME"
