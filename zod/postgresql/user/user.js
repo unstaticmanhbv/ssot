@@ -1,18 +1,20 @@
-import z from "../../../libs/zod.mjs";
-import zodToJsonSchema from "../../../libs/zodToJsonSchema.mjs";
+import { zodToJsonSchema } from "../../../libs/zod";
+import { z } from "../../../libs/zod";
 
 // Định nghĩa schema
-const HabitSchema = z.object({
-  id: z.string(),
-  name: z.string(),
-  createdAt: z.string().datetime().optional(),
-  email: z.string().email().optional(),
-  isActive: z.boolean().optional(),
-  tags: z.array(z.string()).optional(),
+const catSchema = z.object({
+  type: z.literal("cat"),
+  lives: z.number(),
 });
 
-// Chuyển thành JSON Schema
-const jsonSchema = zodToJsonSchema(HabitSchema, "Habit");
+const dogSchema = z.object({
+  type: z.literal("dog"),
+  breed: z.string(),
+});
 
-// In ra
+const petSchema = z.discriminatedUnion("type", [catSchema, dogSchema]);
+
+
+// convert to JSON Schema
+const jsonSchema = zodToJsonSchema(petSchema, "PetSchema");
 console.log(JSON.stringify(jsonSchema, null, 2));
