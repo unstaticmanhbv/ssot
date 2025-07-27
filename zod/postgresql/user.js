@@ -22,6 +22,6 @@ generateToJsonSchema(
     firstWeekDay: z.number().int().optional(),
     lastSeenLocale: z.string().max(50).optional(),
     lastSeenLangCode: z.string().max(50).optional(),
-    metadata: z.record(z.any()).optional(), // jsonb tương ứng với object hoặc record
+    metadata: z.record(z.any()).optional(),
   }),
 );
