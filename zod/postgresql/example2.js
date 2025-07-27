@@ -1,10 +1,19 @@
 import { generateToJsonSchema } from '../../libs/generate-to-json-schema';
 import { z } from '../../libs/zod';
 
-generateToJsonSchema(
-  z.object({
-    id: z.string().max(125),
-    name: z.string().max(255),
-    email: z.string().email().max(255),
-  }),
-);
+const CircleSchema = z.object({
+  type: z.literal('circle'),
+  radius: z.number(),
+});
+
+const RectangleSchema = z.object({
+  type: z.literal('rectangle'),
+  width: z.number(),
+  height: z.number(),
+});
+
+const ShapeSchema = z.discriminatedUnion('type', [
+  CircleSchema,
+  RectangleSchema,
+]);
+generateToJsonSchema(ShapeSchema);
