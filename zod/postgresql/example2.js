@@ -5,5 +5,6 @@ generateToJsonSchema(
   z.object({
     id: z.string().max(125),
     name: z.string().max(255),
+    email: z.string().email().max(255),
   }),
 );
