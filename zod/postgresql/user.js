@@ -4,8 +4,8 @@ import { z } from '../../libs/zod';
 generateToJsonSchema(
   z.object({
     id: z.string().max(125),
-    name: z.string().max(255).optional(),
-    email: z.string().max(255).optional(),
+    name: z.string().max(255),
+    email: z.string().max(255),
     premiumStatus: z.number().int().optional(),
     premiumExpireDate: z
       .string()
